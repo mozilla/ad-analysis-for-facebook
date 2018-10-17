@@ -1,0 +1,44 @@
+{
+	"parserOptions": {
+		"ecmaVersion": 6
+	},
+	"extends": "eslint:recommended",
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"globals": {
+		"d3": false,
+		"localforage": false,
+		"DOMPurify": false,
+		"MSG": false,
+		"IS_PRODUCTION": false,
+		"Monitor": false,
+		"DataStorage": false,
+		"DataServer": false,
+		"DataInterface": false,
+		"__server": false,
+		"__ApiProPublica": false,
+		"parser": false,
+		"adParser": false,
+		"adTargetingParser": false,
+		"browser": false,
+		"require": false
+	},
+	"rules": {
+		"curly": "error",
+                "eqeqeq": "error",
+		"no-cond-assign": ["error", "always"],
+                "no-undef": "error",
+		"semi": ["error", "always"],
+                "comma-dangle": ["warn", "only-multiline"],
+		"indent": ["warn", "tab", {"MemberExpression": "off", "ignoreComments": true}],
+		"linebreak-style": ["warn", "unix"],
+		"no-multi-spaces": ["warn"],
+		"no-trailing-spaces": "warn",
+                "no-unused-vars": ["warn", {"varsIgnorePattern": "^__|IS_PRODUCTION|MSG|Monitor|DataServer|DataStorage|DataInterface|adParser|adTargetingParser|parser"}],
+		"quotes": ["warn", "double", {"avoidEscape": true}],
+		"space-unary-ops": ["warn", {"words": true, "nonwords": false}],
+		"no-console": "off"
+	}
+}

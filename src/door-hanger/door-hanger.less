@@ -1,0 +1,337 @@
+@import (reference) "../photon/photon-colors.less";
+@import (reference) "../common/common.less";
+
+@panelWidth: 320px;
+@sidePadding: 14px;
+@rowPadding: 8px;
+
+@panelFontFamily: "San Francisco", "Segoe UI", "Ubuntu", "Helvetica Neue", sans-serif;
+@panelFontWeight: @fontSemiLightWeight;
+@panelFontSize: 13px;
+
+@toggleSpacing: 3px;
+@toggleInnerRadius: 8px;
+@toggleInnerHeight: @toggleInnerRadius * 2;
+@toggleOuterRadius: @toggleInnerRadius + @toggleSpacing;
+@toggleOuterHeight: @toggleOuterRadius * 2;
+@toggleWidth: (@toggleInnerHeight + @toggleOuterHeight);
+@toggleTransition: 0.2s;
+
+@menuRowHeight: @toggleOuterHeight + 2px;
+.menuRowHeight {
+	display: inline-block;
+	height: @menuRowHeight;
+	line-height: @menuRowHeight;
+	vertical-align: top;
+}
+
+@arrowIconHeight: 1.6em;
+@arrowIconOffsetY: (1.0em - @arrowIconHeight) / 2 + 0.2em;
+@toggleOffsetY: 1px;
+
+@border: 1px solid #ccc;
+
+html, body, div, table, tr, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+body {
+	width: @panelWidth;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	user-select: none;
+	-moz-user-select: none;
+}
+
+#SlideContainer {
+	position: absolute;
+	table#Slide {
+		position: absolute;
+		border-collapse: collapse;
+		border-spacing: 0;
+		tr {
+			vertical-align: top;
+			td {
+				width: @panelWidth;
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+		}
+	}
+}
+
+.action {
+	cursor: pointer;
+	* {
+		pointer-events: none;
+	}
+	.slider {
+		cursor: pointer;
+	}
+}
+
+.panel {
+	width: @panelWidth;
+	position: relative;
+	overflow: hidden;
+
+	font-family: @panelFontFamily;
+	font-size: @panelFontSize;
+	font-weight: @panelFontWeight;
+	color: @textBlackForeground;
+	
+	.row {
+		padding: @sidePadding;
+		border-top: @border;
+		&:first-child {
+			border-top: none;
+		}
+
+		&.dimmed {
+			opacity: 0.25;
+		}
+		.toggle {
+			float: right;
+			border-left: @border;
+			padding-left: @sidePadding;
+			padding-top: @toggleOffsetY;
+		}
+		.arrowLeft {
+			float: left;
+			img.icon {
+				height: @arrowIconHeight;
+				vertical-align: @arrowIconOffsetY;
+			}
+		}
+		.arrowRight {
+			float: right;
+			border-left: @border;
+			padding-left: @sidePadding;
+			img.icon {
+				height: @arrowIconHeight;
+				vertical-align: @arrowIconOffsetY;
+			}
+		}
+	}
+}
+
+#FirstPanel {
+	.topVisibleRows {
+		border-bottom: @border;
+	}
+	.row.headerRow {
+		padding-top: @rowPadding;
+		padding-bottom: @rowPadding;
+		font-weight: @fontSemiBoldWeight;
+		.text, .toggle {
+			.menuRowHeight();
+		}
+	}
+	.row.adsAnalyzedRow {
+		.text {
+			padding-bottom: @sidePadding;
+			color: @textGreyForeground;
+		}
+		.stats {
+			padding-top: @sidePadding;
+			padding-bottom: @sidePadding;
+			background: @statsBoxLightBlueBackground;
+			
+			.numDatabaseAdCount {
+				display: block;
+				text-align: center;
+				font-size: 16px;
+				font-weight: @fontSemiBoldWeight;
+				color: @textGreyForeground;
+				letter-spacing: -0.1px;
+			}
+			.strAdCollected,
+			.strAdsCollected {
+				display: block;
+				text-align: center;
+				font-size: 12px;
+				color: @extensionLightBlue;
+			}
+		}
+		.noStats {
+			padding-top: @sidePadding;
+			padding-bottom: @sidePadding * 2;
+			.strStartCollecting {
+				a {
+					color: @extensionLightBlue;
+				}
+			}
+		}
+	}
+	#TargetTypesRow {
+		.text {
+			padding-bottom: @sidePadding;
+		}
+		#TopTargetTypes {
+			.targetType {
+				margin-bottom: 4px;
+				.firstRow {
+					font-size: 12px;
+					.label {
+					}
+					.count {
+						font-size: 11px;
+						color: @extensionGrey;
+						letter-spacing: -0.07px;
+					}
+				}
+				.secondRow {
+					.bar {
+						display: inline-block;
+						background: @extensionDarkBlue;
+						height: 10px;
+					}
+				}
+			}
+		}
+		#RemainingTargetTypes {
+			font-size: 12px;
+			color: @extensionGrey;
+		}
+	}
+	#RecentTargetValuesRow {
+		.text {
+			padding-bottom: @sidePadding;
+		}
+		#RecentTargetValues {
+			.targetValue {
+				display: inline-block;
+				font-size: 12px;
+				background: @targetValueLightGreyBackground;
+				border: @targetValueGreyBorder;
+				border-radius: @targetValueBorderRadius;
+				padding: @targetValuePadding;
+				margin: 2px;
+			}
+		}
+	}
+	.row.incognitoRow {
+		padding-bottom: @rowPadding * 4;
+	}
+	.row.clearAdsRow {
+		padding-top: @rowPadding;
+		padding-bottom: @rowPadding;
+		&.action.hover {
+			background: @clearAdsButtonGreyBackground;
+		}
+		.arrowRight {
+			.menuRowHeight();
+		}
+		.text {
+			.menuRowHeight();
+		}
+	}
+	.row.footerRow {
+		padding-top: @rowPadding;
+		padding-bottom: @rowPadding;
+		border-top: none;
+		border-bottom-right-radius: 2px;
+		border-bottom-left-radius: 2px;
+
+		background: @extensionLightBlue;
+		.text {
+			.menuRowHeight();
+			width: 100%;
+			text-align: center;
+			letter-spacing: 1.05px;
+			color: @textWhiteForeground;
+			span {
+				display: block;
+			}
+			a {
+				color: @textWhiteForeground;
+			}
+		}
+	}
+}
+
+#SecondPanel {
+	.row.headerRow {
+		padding-top: @rowPadding;
+		padding-bottom: @rowPadding;
+		font-weight: @fontSemiBoldWeight;
+		&.action.hover {
+			background: @clearAdsButtonGreyBackground;
+		}
+		.arrowLeft {
+			.menuRowHeight();
+		}
+		.text {
+			.menuRowHeight();
+			width: 92%;
+			text-align: center;
+		}
+	}
+	.row.clearDatabaseRow {
+		border-top: none;
+		.actionClearDatabase {
+			padding-top: @sidePadding;
+			padding-bottom: @sidePadding;
+			background: @clearAdsButtonGreyBackground;
+			border-radius: 4px;
+			text-align: center;
+			&:hover {
+				color: @textWhiteForeground;
+				background: @extensionLightBlue;
+			}
+		}
+	}
+}
+
+.toggle {
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: @toggleWidth;
+		height: @toggleOuterHeight;
+		input {
+			display: none;
+		}
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: @grey-40;
+		border-radius: @toggleOuterRadius;
+		transition: @toggleTransition;
+		
+		&:before {
+			position: absolute;
+			content: "";
+			height: @toggleInnerHeight;
+			width: @toggleInnerHeight;
+			left: @toggleSpacing;
+			bottom: @toggleSpacing;
+			background-color: @white-100;
+			border-radius: @toggleInnerRadius;
+			transition: @toggleTransition;
+		}
+	}
+
+	input.isChecked + .slider {
+		background-color: @extensionDarkBlue;
+	}
+
+	input.isChecked + .slider:before {
+		transform: translateX(@toggleInnerHeight);
+		background-color: @white-100;
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"manifest_version": 2,
+	"name": "Ad Analysis for Facebook",
+	"short_name": "Ad Analysis for Facebook",
+	"description": "See how Facebook helps advertisers target you",
+	"homepage_url": "https://github.com/mozilla/ad-analysis-for-facebook",
+	"version": "1.0.0",
+	"version_name": "1.0.0-rc3",
+	"applications": {
+		"gecko": {
+			"id": "AdAnalysisForFacebook@firefox.com"
+		}
+	},
+	"permissions": [
+		"https://projects.propublica.org/fbpac-api/ads/persona*",
+		"storage",
+		"unlimitedStorage"
+	],
+	"background": {
+		"scripts": [
+			"lib/localforage.js",
+			"common/globals.js",
+			"common/messages.js",
+			"common/monitor.js",
+			"background/data-storage.js",
+			"background/data-server.js",
+			"background/background.js",
+			"qa_testing/api-propublica.js",
+			"qa_testing/background.js"
+		]
+	},
+	"content_scripts": [
+		{
+			"js": [
+				"lib/d3.js",
+				"lib/parsimmon-browserified.js",
+				"lib/purify.js",
+				"common/globals.js",
+				"common/messages.js",
+				"common/monitor.js",
+				"content/ad-targeting-parser.js",
+				"content/ad-parser.js",
+				"content/parser.js",
+				"content/scanner.js"
+			],
+			"matches": [
+				"*://www.facebook.com/*"
+			],
+			"exclude_globs": [
+				"*://www.facebook.com/ads/archive/*"
+			]
+		}
+	],
+	"browser_action": {
+		"default_title": "Ad Analysis for Facebook",
+		"default_popup": "door-hanger/door-hanger.html",
+		"default_icon": "door-hanger/toolbar-icon-light.svg",
+		"theme_icons": [{
+		        "light": "door-hanger/toolbar-icon-light.svg",
+		        "dark": "door-hanger/toolbar-icon-dark.svg",
+		        "size": 32
+		}]
+	}
+}

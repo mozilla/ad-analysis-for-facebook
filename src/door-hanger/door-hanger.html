@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 DRAFT//EN">
+<html lang="en">
+<head>
+	<title>Ad Analysis for Facebook</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=320, initial-scale=1"/>
+	<script type="text/javascript" src="../lib/d3.js"></script>
+	<script type="text/javascript" src="../common/globals.js"></script>
+	<script type="text/javascript" src="../common/messages.js"></script>
+	<script type="text/javascript" src="../common/monitor.js"></script>
+	<script type="text/javascript" src="../common/data-interface.js"></script>
+	<script type="text/javascript" src="door-hanger.js"></script>
+	<link rel="stylesheet" type="text/css" href="door-hanger.css"/>
+</head>
+<body>
+	<div id="SlideContainer">
+		<table id="Slide"><tr><td>
+			<div id="FirstPanel" class="panel panel0 panelHeight0">
+				<div class="topVisibleRows">
+					<div class="row headerRow">
+						<div class="text">
+							<span class="str strTitle">Ad Analysis for Facebook</span>
+						</div>
+						<div class="toggle action actionToggleMonitor">
+							<label class="switch">
+								<input type="checkbox" />
+								<span class="slider"></span>
+							</label>
+						</div>
+					</div>
+					<div class="row incognitoRow" style="display:none">
+						<div class="text">
+							<span class="str strIncognitoParagraph">This extension is turned off in private browsing windows.</span>
+						</div>
+					</div>
+				</div>
+				<div class="dimmedOnDisableRows">
+					<div class="row adsAnalyzedRow">
+						<div class="text">
+							<span class="str strAdsAnalyzedParagraph">See what Facebook knows about you and how that makes you a target for advertisers.</span>
+						</div>
+						<div class="noStats" style="display: none">
+							<span class="str strStartCollecting"><a href="http://www.facebook.com/" rel="noopener noreferrer" target="_blank">Visit Facebook to start collecting ads</a></span>
+						</div>
+						<div class="stats" style="display: none">
+							<span class="numDatabaseAdCount">&mdash;</span>
+							<span class="str strAdCollected">Ad Collected</span>
+							<span class="str strAdsCollected">Ads Collected</span>
+						</div>
+					</div>
+					<div id="TargetTypesRow" class="row" style="display: none">
+						<div class="text">
+							<span class="str strTargetValuesParagraph">You are frequently targeted by:</span>
+						</div>
+						<div id="TopTargetTypes"></div>
+						<div id="RemainingTargetTypes">
+							<span class="strPlusNOtherCategories"></span>
+						</div>
+					</div>
+					<div id="RecentTargetValuesRow" class="row" style="display: none">
+						<div class="text">
+							<span class="str strRecentTargetValuesParagraph">In the past 7 days, you have been targeted for these interests and advertiser categories.</span>
+						</div>
+						<div id="RecentTargetValues"></div>
+					</div>
+				</div>
+				<div class="row clearAdsRow action actionSlide actionSlide1">
+					<div class="text">
+						<span class="str strClearAllAdsTitle">Clear all collected ads</span>
+					</div>
+					<div class="arrowRight">
+						<img class="icon" src="arrow-right.svg"/>
+					</div>
+				</div>
+				<div class="row footerRow">
+					<a href="../info/info.html" target="AdAnalysisForFacebook"><div class="text">
+						<span class="str strLearnMore">View More Information</span>
+					</div></a>
+				</div>
+			</div>
+		</td><td>
+			<div id="SecondPanel" class="panel panel1 panelHeight1" style="height: 0">
+				<div class="row headerRow action actionSlide actionSlide0">
+					<div class="arrowLeft">
+						<img class="icon" src="arrow-left.svg"/>
+					</div>
+					<div class="text">
+						<span class="str strClearAllAdsTitle">Clear all collected ads</span>
+					</div>
+				</div>
+				<div class="row descriptionRow">
+					<div class="text">
+						<span class="str strClearAllAdsParagraph">Select Clear Now to reset this extension and remove all collected information.</span>
+					</div>
+				</div>
+				<div class="row footRow clearDatabaseRow">
+					<div class="action actionClearDatabase">
+						<span class="str strClearAllAdsButton">Clear Now</span>
+					</div>
+				</div>
+			</div>
+		</td></tr></table>
+	</div>
+</body>
+</html>

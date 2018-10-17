@@ -1,0 +1,11 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<svg data-name="Flat (For Export)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <circle fill="#0C0C0C" fill-opacity="0.8" cx="8" cy="6" r="3"/>
+  <path fill="#0C0C0C" fill-opacity="0.8" d="M.89 7h.66a.7.7 0 0 0 .66-.53 6 6 0 0 1 4.26-4.26.7.7 0 0 0 .53-.66V.89a.69.69 0 0 0-.85-.67A8 8 0 0 0 .22 6.15.69.69 0 0 0 .89 7z"/>
+  <path fill="#0C0C0C" fill-opacity="0.8" d="M9.53 2.21a6 6 0 0 1 4.26 4.26.7.7 0 0 0 .66.53h.66a.69.69 0 0 0 .67-.85A8 8 0 0 0 9.85.22.69.69 0 0 0 9 .89v.66a.7.7 0 0 0 .53.66z"/>
+  <path fill="#0C0C0C" fill-opacity="0.8" d="M6.47 13.79a6 6 0 0 1-4.26-4.26.7.7 0 0 0-.66-.53H.89a.69.69 0 0 0-.67.85 8 8 0 0 0 5.93 5.93.69.69 0 0 0 .85-.67v-.66a.7.7 0 0 0-.53-.66z"/>
+  <path fill="#0C0C0C" fill-opacity="0.8" d="M15.11 9h-.66a.7.7 0 0 0-.66.53 6 6 0 0 1-4.26 4.26.7.7 0 0 0-.53.66v.66a.69.69 0 0 0 .85.67 8 8 0 0 0 5.93-5.93.69.69 0 0 0-.67-.85z"/>
+  <path fill="#0C0C0C" fill-opacity="0.8" d="M12.11 10.81a1 1 0 0 0-.06-1.23C11 8.36 9.52 10 8 10s-3-1.64-4-.42a1 1 0 0 0-.06 1.23 5 5 0 0 0 8.22 0z"/>
+</svg>
