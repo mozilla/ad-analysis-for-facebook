@@ -4,8 +4,7 @@
 	"short_name": "Ad Analysis for Facebook",
 	"description": "See how Facebook helps advertisers target you",
 	"homepage_url": "https://github.com/mozilla/ad-analysis-for-facebook",
-	"version": "1.0.0",
-	"version_name": "1.0.0-rc3",
+	"version": "1.0.1",
 	"applications": {
 		"gecko": {
 			"id": "AdAnalysisForFacebook@firefox.com"
