@@ -4,7 +4,7 @@
 	"short_name": "Ad Analysis for Facebook",
 	"description": "See how Facebook helps advertisers target you",
 	"homepage_url": "https://github.com/mozilla/ad-analysis-for-facebook",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"applications": {
 		"gecko": {
 			"id": "AdAnalysisForFacebook@firefox.com"
@@ -55,8 +55,8 @@
 		"default_popup": "door-hanger/door-hanger.html",
 		"default_icon": "door-hanger/toolbar-icon-light.svg",
 		"theme_icons": [{
-		        "light": "door-hanger/toolbar-icon-light.svg",
-		        "dark": "door-hanger/toolbar-icon-dark.svg",
+		        "light": "door-hanger/toolbar-icon-dark.svg",
+		        "dark": "door-hanger/toolbar-icon-light.svg",
 		        "size": 32
 		}]
 	}
