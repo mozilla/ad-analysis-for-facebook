@@ -94,22 +94,6 @@ const [DataInterface] = (function() {
 	};
 
 	/**
-	 * Retrieve the start date of the database.
-	 * @async
-	 * @returns {number} Value in milliseconds since the UNIX epoch.
-	 **/
-	DataInterface.prototype.getStartDate = function() {
-		return new Promise(resolve => {
-			this.monitor.ENTER("getStartDate");
-			this._sendMessage(MSG.UI.GET_START_DATE).then(results => {
-				this.monitor.RESULTS(results);
-				this.monitor.EXIT("getStartDate");
-				resolve(results);
-			});
-		});
-	};
-
-	/**
 	 * @constant {number} Default number of target types to generate.
 	 **/
 	const DEFAULT_TARGET_TYPE_LIMIT = 5;

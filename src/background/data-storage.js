@@ -197,42 +197,9 @@ const [DataStorage] = (function(){
 	};
 
 	/**
-	 * @constant {string} Key for the "startDate" value.
-	 **/
-	const START_DATE_KEY = "startDate";
-
-	/**
 	 * @constant {string} Key for the "disableMonitor" value.
 	 **/
 	const DISABLE_MONITOR_KEY = "disableMonitor";
-
-	/**
-	 * @constant {string} Key for the "disallowSurveys" value.
-	 **/
-	const DISALLOW_SURVEYS_KEY = "disallowSurveys";
-
-	/**
-	 * Reset the start date if no value is currently set.
-	 * One-time initialization when the add-on is first installed (and database first created).
-	 * @async
-	 **/
-	DataStorage.prototype.initStartDate = function() {
-		return new Promise(resolve => {
-			this.monitor.ENTER("initStartDate");
-			this.getStartDate().then(value => {
-				if (!value) {
-					this.resetStartDate().then(() => {
-						this.monitor.EXIT("initStartDate");
-						resolve(true);
-					});
-				}
-				else {
-					this.monitor.EXIT("initStartDate");
-					resolve(false);
-				}
-			});
-		});
-	};
 
 	/**
 	 * Set the value of a persistant variable.
@@ -271,23 +238,6 @@ const [DataStorage] = (function(){
 	};
 
 	/**
-	 * Reset the value of "startDate" to now.
-	 * @async
-	 **/
-	DataStorage.prototype.resetStartDate = function() {
-		return this._setValue(START_DATE_KEY, Date.now());
-	};
-
-	/**
-	 * Get the value of "startDate".
-	 * @async
-	 * @return {number} Value in milliseconds since the UNIX epoch.
-	 **/
-	DataStorage.prototype.getStartDate = function() {
-		return this._getValue(START_DATE_KEY);
-	};
-
-	/**
 	 * Set the value of "disableMonitor".
 	 * @async
 	 * @param {boolean} isDsiabled - Flag to disable the monitor.
@@ -303,24 +253,6 @@ const [DataStorage] = (function(){
 	 **/
 	DataStorage.prototype.getDisableMonitor = function() {
 		return this._getValue(DISABLE_MONITOR_KEY);
-	};
-
-	/**
-	 * Set the value of "disallowSurveys".
-	 * @async
-	 * @param {boolean} Flag to disallow surveys.
-	 **/
-	DataStorage.prototype.setDisallowSurveys = function(isDisallowed) {
-		return this._setValue(DISALLOW_SURVEYS_KEY, isDisallowed);
-	};
-
-	/**
-	 * Get the value of "disallowSurveys".
-	 * @async
-	 * @returns {boolean} Flag to disallow surveys.
-	 **/
-	DataStorage.prototype.getDisallowSurveys = function() {
-		return this._getValue(DISALLOW_SURVEYS_KEY);
 	};
 
 	return [DataStorage];

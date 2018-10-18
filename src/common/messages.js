@@ -128,13 +128,6 @@ const [MSG] = (function() {
 	MSG.UI.GET_ALL_TARGETS = "ui:getAllTargets";
 
 	/**
-	 * @constant {string} Message key to retreive start date.
-	 *     No parameters.
-	 *     Returns a date value.
-	 **/
-	MSG.UI.GET_START_DATE = "ui:getStartDate";
-
-	/**
 	 * @constant {string} Message key to enable monitor.
 	 *     No parameters.
 	 *     No return values.

@@ -320,17 +320,13 @@ const [AppDoorHanger] = (function() {
 	 **/
 	AppDoorHanger.prototype.onDatabaseEvents = function() {
 		this.monitor.ENTER("onDatabaseEvents");
-		this.dataInterface.getStartDate().then(results => {
+		this.monitor.DATA("settings =", this.settings);
+		this.dataInterface.computeDoorHangerStats(TOP_TARGET_TYPES, FREQUENT_TARGET_VALUES, RECENT_TARGET_VALUES, RECENT_DAYS).then(results => {
 			this.monitor.RESULTS(results);
-			Object.assign(this.settings, results);
-			this.monitor.DATA("settings =", this.settings);
-			this.dataInterface.computeDoorHangerStats(TOP_TARGET_TYPES, FREQUENT_TARGET_VALUES, RECENT_TARGET_VALUES, RECENT_DAYS).then(results => {
-				this.monitor.RESULTS(results);
-				Object.assign(this.stats, results);
-				this.monitor.DATA("stats =", this.stats);
-				this.monitor.EXIT("onDatabaseEvents");
-				this.renderDatabaseStats();
-			});
+			Object.assign(this.stats, results);
+			this.monitor.DATA("stats =", this.stats);
+			this.monitor.EXIT("onDatabaseEvents");
+			this.renderDatabaseStats();
 		});
 	};
 

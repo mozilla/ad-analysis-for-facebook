@@ -236,30 +236,11 @@ const [DataServer] = (function() {
 				}
 			}
 
-			// Respond to requests related to persistant data storage.
-			if (MSG.UI.GET_START_DATE === key) {
-				if (!isIncognito) {
-					return this.getStartDate().then(startDate => {
-						return {
-							"startDate": startDate,
-						};
-					});
-				}
-				else {
-					return Promise.resolve({
-						"startDate": undefined,
-					});
-				}
-			}
-
 			// Apply actions to persistant data storage.
 			if (MSG.UI.ENABLE_MONITOR === key) {
 				if (!isIncognito) {
-					this.enableMonitor().then(isInitStartDate => {
+					this.enableMonitor().then(() => {
 						this.sendMonitorStatusEvent();
-						if (isInitStartDate) {
-							this.sendDatabaseEvent();
-						}
 					});
 				}
 				return;
@@ -388,22 +369,6 @@ const [DataServer] = (function() {
 	};
 
 	/**
-	 * Retrieve the start date of the database.
-	 * @async
-	 * @returns {number} Value in milliseconds since the UNIX epoch.
-	 **/
-	DataServer.prototype.getStartDate = function() {
-		return new Promise(resolve => {
-			this.monitor.ENTER("getStartDate");
-			this.dataStorage.getStartDate().then(startDate => {
-				this.monitor.RESULTS("startDate =", startDate);
-				this.monitor.EXIT("getStartDate");
-				resolve(startDate);
-			});
-		});
-	};
-
-	/**
 	 * Retrieve the status of the monitor.
 	 * @async
 	 * @returns {boolean} Flag on whether the monitor is enabled.
@@ -435,10 +400,8 @@ const [DataServer] = (function() {
 			this.monitor.ENTER("clearDatabase");
 			this.dataStorage.clearAllAds().then(() => {
 				this.dataStorage.clearAllTargets().then(() => {
-					this.dataStorage.resetStartDate().then(() => {
-						this.monitor.EXIT("clearDatabase");
-						resolve();
-					});
+					this.monitor.EXIT("clearDatabase");
+					resolve();
 				});
 			});
 		});
@@ -452,10 +415,8 @@ const [DataServer] = (function() {
 		return new Promise(resolve => {
 			this.monitor.ENTER("enableMonitor");
 			this.dataStorage.setDisableMonitor(false).then(() => {
-				this.dataStorage.initStartDate().then(isInitStartDate => {
-					this.monitor.EXIT("enableMonitor");
-					resolve(isInitStartDate);
-				});
+				this.monitor.EXIT("enableMonitor");
+				resolve();
 			});
 		});
 	};

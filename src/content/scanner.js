@@ -38,11 +38,6 @@ const [Scanner] = (function() {
 	const SIDEBAR_CLASS_NAME = "ego_unit";
 
 	/**
-	 * @constant {number} Initial delay in milleseconds before the first scan.
-	 **/
-	const SCAN_INITIAL_DELAY_DURATION = 5000;
-
-	/**
 	 * @constant {number} Maximum frequency of consecutive scans in milleseconds.
 	 **/
 	const SCAN_DEBOUNCE_DURATION = 100;
@@ -73,7 +68,6 @@ const [Scanner] = (function() {
 
 		this.listenToBackgroundMessages();
 		this.listenToWindowEvents();
-		setTimeout(this.scheduleScanForAds, SCAN_INITIAL_DELAY_DURATION);
 
 		this.monitor.KEY_EXIT("FacebookScanner");
 	};
