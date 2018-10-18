@@ -1,7 +1,7 @@
 {
   "name": "ad-analysis-for-facebook",
   "description": "Ad Analysis for Facebook",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "author": "Jason Chuang (jchuang@mozilla.com)",
   "bugs": {
     "url": "https://github.com/mozilla/ad-analysis-for-facebook/issues"
