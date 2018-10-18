@@ -70,9 +70,597 @@
   ], 
   "week_keys": [
     "2018-10-07", 
+    "2018-09-30", 
     "ALL"
   ], 
   "weeks": {
+    "2018-09-30": {
+      "gender_keys": [
+        "ALL", 
+        "male", 
+        "female"
+      ], 
+      "genders": {
+        "ALL": {
+          "age_keys": [
+            "ALL", 
+            "13-17", 
+            "18-24", 
+            "25-34", 
+            "35-44", 
+            "45-54", 
+            "55-64", 
+            "65+"
+          ], 
+          "ages": {
+            "13-17": {
+              "age_key": "13-17", 
+              "class_name": "w20180930_gALL_a1317", 
+              "filter": "gender+age", 
+              "gender": "ALL", 
+              "week": "2018-09-30"
+            }, 
+            "18-24": {
+              "age_key": "18-24", 
+              "class_name": "w20180930_gALL_a1824", 
+              "filter": "gender+age", 
+              "gender": "ALL", 
+              "week": "2018-09-30"
+            }, 
+            "25-34": {
+              "age_key": "25-34", 
+              "class_name": "w20180930_gALL_a2534", 
+              "filter": "gender+age", 
+              "gender": "ALL", 
+              "week": "2018-09-30"
+            }, 
+            "35-44": {
+              "age_key": "35-44", 
+              "class_name": "w20180930_gALL_a3544", 
+              "filter": "gender+age", 
+              "gender": "ALL", 
+              "week": "2018-09-30"
+            }, 
+            "45-54": {
+              "age_key": "45-54", 
+              "class_name": "w20180930_gALL_a4554", 
+              "filter": "gender+age", 
+              "gender": "ALL", 
+              "week": "2018-09-30"
+            }, 
+            "55-64": {
+              "age_key": "55-64", 
+              "class_name": "w20180930_gALL_a5564", 
+              "filter": "gender+age", 
+              "gender": "ALL", 
+              "week": "2018-09-30"
+            }, 
+            "65+": {
+              "age_key": "65+", 
+              "class_name": "w20180930_gALL_a65", 
+              "filter": "gender+age", 
+              "gender": "ALL", 
+              "week": "2018-09-30"
+            }, 
+            "ALL": {
+              "age_key": "ALL", 
+              "class_name": "w20180930_gALL_aALL", 
+              "filter": "gender+age", 
+              "gender": "ALL", 
+              "week": "2018-09-30"
+            }
+          }
+        }, 
+        "female": {
+          "age_keys": [
+            "ALL", 
+            "13-17", 
+            "18-24", 
+            "25-34", 
+            "35-44", 
+            "45-54", 
+            "55-64", 
+            "65+"
+          ], 
+          "ages": {
+            "13-17": {
+              "age_key": "13-17", 
+              "class_name": "w20180930_gfemale_a1317", 
+              "filter": "gender+age", 
+              "gender": "female", 
+              "week": "2018-09-30"
+            }, 
+            "18-24": {
+              "age_key": "18-24", 
+              "class_name": "w20180930_gfemale_a1824", 
+              "filter": "gender+age", 
+              "gender": "female", 
+              "week": "2018-09-30"
+            }, 
+            "25-34": {
+              "age_key": "25-34", 
+              "class_name": "w20180930_gfemale_a2534", 
+              "filter": "gender+age", 
+              "gender": "female", 
+              "week": "2018-09-30"
+            }, 
+            "35-44": {
+              "age_key": "35-44", 
+              "class_name": "w20180930_gfemale_a3544", 
+              "filter": "gender+age", 
+              "gender": "female", 
+              "week": "2018-09-30"
+            }, 
+            "45-54": {
+              "age_key": "45-54", 
+              "class_name": "w20180930_gfemale_a4554", 
+              "filter": "gender+age", 
+              "gender": "female", 
+              "week": "2018-09-30"
+            }, 
+            "55-64": {
+              "age_key": "55-64", 
+              "class_name": "w20180930_gfemale_a5564", 
+              "filter": "gender+age", 
+              "gender": "female", 
+              "week": "2018-09-30"
+            }, 
+            "65+": {
+              "age_key": "65+", 
+              "class_name": "w20180930_gfemale_a65", 
+              "filter": "gender+age", 
+              "gender": "female", 
+              "week": "2018-09-30"
+            }, 
+            "ALL": {
+              "age_key": "ALL", 
+              "class_name": "w20180930_gfemale_aALL", 
+              "filter": "gender+age", 
+              "gender": "female", 
+              "week": "2018-09-30"
+            }
+          }
+        }, 
+        "male": {
+          "age_keys": [
+            "ALL", 
+            "13-17", 
+            "18-24", 
+            "25-34", 
+            "35-44", 
+            "45-54", 
+            "55-64", 
+            "65+"
+          ], 
+          "ages": {
+            "13-17": {
+              "age_key": "13-17", 
+              "class_name": "w20180930_gmale_a1317", 
+              "filter": "gender+age", 
+              "gender": "male", 
+              "week": "2018-09-30"
+            }, 
+            "18-24": {
+              "age_key": "18-24", 
+              "class_name": "w20180930_gmale_a1824", 
+              "filter": "gender+age", 
+              "gender": "male", 
+              "week": "2018-09-30"
+            }, 
+            "25-34": {
+              "age_key": "25-34", 
+              "class_name": "w20180930_gmale_a2534", 
+              "filter": "gender+age", 
+              "gender": "male", 
+              "week": "2018-09-30"
+            }, 
+            "35-44": {
+              "age_key": "35-44", 
+              "class_name": "w20180930_gmale_a3544", 
+              "filter": "gender+age", 
+              "gender": "male", 
+              "week": "2018-09-30"
+            }, 
+            "45-54": {
+              "age_key": "45-54", 
+              "class_name": "w20180930_gmale_a4554", 
+              "filter": "gender+age", 
+              "gender": "male", 
+              "week": "2018-09-30"
+            }, 
+            "55-64": {
+              "age_key": "55-64", 
+              "class_name": "w20180930_gmale_a5564", 
+              "filter": "gender+age", 
+              "gender": "male", 
+              "week": "2018-09-30"
+            }, 
+            "65+": {
+              "age_key": "65+", 
+              "class_name": "w20180930_gmale_a65", 
+              "filter": "gender+age", 
+              "gender": "male", 
+              "week": "2018-09-30"
+            }, 
+            "ALL": {
+              "age_key": "ALL", 
+              "class_name": "w20180930_gmale_aALL", 
+              "filter": "gender+age", 
+              "gender": "male", 
+              "week": "2018-09-30"
+            }
+          }
+        }
+      }, 
+      "state_keys": [
+        "ALL", 
+        "Alabama", 
+        "Alaska", 
+        "Arizona", 
+        "Arkansas", 
+        "California", 
+        "Colorado", 
+        "Connecticut", 
+        "Delaware", 
+        "District of Columbia", 
+        "Florida", 
+        "Georgia", 
+        "Hawaii", 
+        "Idaho", 
+        "Illinois", 
+        "Indiana", 
+        "Iowa", 
+        "Kansas", 
+        "Kentucky", 
+        "Louisiana", 
+        "Maine", 
+        "Maryland", 
+        "Massachusetts", 
+        "Michigan", 
+        "Minnesota", 
+        "Mississippi", 
+        "Missouri", 
+        "Montana", 
+        "Nebraska", 
+        "Nevada", 
+        "New Hampshire", 
+        "New Jersey", 
+        "New Mexico", 
+        "New York", 
+        "North Carolina", 
+        "North Dakota", 
+        "Ohio", 
+        "Oklahoma", 
+        "Oregon", 
+        "Pennsylvania", 
+        "Rhode Island", 
+        "South Carolina", 
+        "South Dakota", 
+        "Tennessee", 
+        "Texas", 
+        "Utah", 
+        "Vermont", 
+        "Virginia", 
+        "Washington", 
+        "West Virginia", 
+        "Wisconsin", 
+        "Wyoming"
+      ], 
+      "states": {
+        "ALL": {
+          "class_name": "w20180930_sALL", 
+          "filter": "state", 
+          "state": "ALL", 
+          "week": "2018-09-30"
+        }, 
+        "Alabama": {
+          "class_name": "w20180930_sAlabama", 
+          "filter": "state", 
+          "state": "Alabama", 
+          "week": "2018-09-30"
+        }, 
+        "Alaska": {
+          "class_name": "w20180930_sAlaska", 
+          "filter": "state", 
+          "state": "Alaska", 
+          "week": "2018-09-30"
+        }, 
+        "Arizona": {
+          "class_name": "w20180930_sArizona", 
+          "filter": "state", 
+          "state": "Arizona", 
+          "week": "2018-09-30"
+        }, 
+        "Arkansas": {
+          "class_name": "w20180930_sArkansas", 
+          "filter": "state", 
+          "state": "Arkansas", 
+          "week": "2018-09-30"
+        }, 
+        "California": {
+          "class_name": "w20180930_sCalifornia", 
+          "filter": "state", 
+          "state": "California", 
+          "week": "2018-09-30"
+        }, 
+        "Colorado": {
+          "class_name": "w20180930_sColorado", 
+          "filter": "state", 
+          "state": "Colorado", 
+          "week": "2018-09-30"
+        }, 
+        "Connecticut": {
+          "class_name": "w20180930_sConnecticut", 
+          "filter": "state", 
+          "state": "Connecticut", 
+          "week": "2018-09-30"
+        }, 
+        "Delaware": {
+          "class_name": "w20180930_sDelaware", 
+          "filter": "state", 
+          "state": "Delaware", 
+          "week": "2018-09-30"
+        }, 
+        "District of Columbia": {
+          "class_name": "w20180930_sDistrictofColumbia", 
+          "filter": "state", 
+          "state": "District of Columbia", 
+          "week": "2018-09-30"
+        }, 
+        "Florida": {
+          "class_name": "w20180930_sFlorida", 
+          "filter": "state", 
+          "state": "Florida", 
+          "week": "2018-09-30"
+        }, 
+        "Georgia": {
+          "class_name": "w20180930_sGeorgia", 
+          "filter": "state", 
+          "state": "Georgia", 
+          "week": "2018-09-30"
+        }, 
+        "Hawaii": {
+          "class_name": "w20180930_sHawaii", 
+          "filter": "state", 
+          "state": "Hawaii", 
+          "week": "2018-09-30"
+        }, 
+        "Idaho": {
+          "class_name": "w20180930_sIdaho", 
+          "filter": "state", 
+          "state": "Idaho", 
+          "week": "2018-09-30"
+        }, 
+        "Illinois": {
+          "class_name": "w20180930_sIllinois", 
+          "filter": "state", 
+          "state": "Illinois", 
+          "week": "2018-09-30"
+        }, 
+        "Indiana": {
+          "class_name": "w20180930_sIndiana", 
+          "filter": "state", 
+          "state": "Indiana", 
+          "week": "2018-09-30"
+        }, 
+        "Iowa": {
+          "class_name": "w20180930_sIowa", 
+          "filter": "state", 
+          "state": "Iowa", 
+          "week": "2018-09-30"
+        }, 
+        "Kansas": {
+          "class_name": "w20180930_sKansas", 
+          "filter": "state", 
+          "state": "Kansas", 
+          "week": "2018-09-30"
+        }, 
+        "Kentucky": {
+          "class_name": "w20180930_sKentucky", 
+          "filter": "state", 
+          "state": "Kentucky", 
+          "week": "2018-09-30"
+        }, 
+        "Louisiana": {
+          "class_name": "w20180930_sLouisiana", 
+          "filter": "state", 
+          "state": "Louisiana", 
+          "week": "2018-09-30"
+        }, 
+        "Maine": {
+          "class_name": "w20180930_sMaine", 
+          "filter": "state", 
+          "state": "Maine", 
+          "week": "2018-09-30"
+        }, 
+        "Maryland": {
+          "class_name": "w20180930_sMaryland", 
+          "filter": "state", 
+          "state": "Maryland", 
+          "week": "2018-09-30"
+        }, 
+        "Massachusetts": {
+          "class_name": "w20180930_sMassachusetts", 
+          "filter": "state", 
+          "state": "Massachusetts", 
+          "week": "2018-09-30"
+        }, 
+        "Michigan": {
+          "class_name": "w20180930_sMichigan", 
+          "filter": "state", 
+          "state": "Michigan", 
+          "week": "2018-09-30"
+        }, 
+        "Minnesota": {
+          "class_name": "w20180930_sMinnesota", 
+          "filter": "state", 
+          "state": "Minnesota", 
+          "week": "2018-09-30"
+        }, 
+        "Mississippi": {
+          "class_name": "w20180930_sMississippi", 
+          "filter": "state", 
+          "state": "Mississippi", 
+          "week": "2018-09-30"
+        }, 
+        "Missouri": {
+          "class_name": "w20180930_sMissouri", 
+          "filter": "state", 
+          "state": "Missouri", 
+          "week": "2018-09-30"
+        }, 
+        "Montana": {
+          "class_name": "w20180930_sMontana", 
+          "filter": "state", 
+          "state": "Montana", 
+          "week": "2018-09-30"
+        }, 
+        "Nebraska": {
+          "class_name": "w20180930_sNebraska", 
+          "filter": "state", 
+          "state": "Nebraska", 
+          "week": "2018-09-30"
+        }, 
+        "Nevada": {
+          "class_name": "w20180930_sNevada", 
+          "filter": "state", 
+          "state": "Nevada", 
+          "week": "2018-09-30"
+        }, 
+        "New Hampshire": {
+          "class_name": "w20180930_sNewHampshire", 
+          "filter": "state", 
+          "state": "New Hampshire", 
+          "week": "2018-09-30"
+        }, 
+        "New Jersey": {
+          "class_name": "w20180930_sNewJersey", 
+          "filter": "state", 
+          "state": "New Jersey", 
+          "week": "2018-09-30"
+        }, 
+        "New Mexico": {
+          "class_name": "w20180930_sNewMexico", 
+          "filter": "state", 
+          "state": "New Mexico", 
+          "week": "2018-09-30"
+        }, 
+        "New York": {
+          "class_name": "w20180930_sNewYork", 
+          "filter": "state", 
+          "state": "New York", 
+          "week": "2018-09-30"
+        }, 
+        "North Carolina": {
+          "class_name": "w20180930_sNorthCarolina", 
+          "filter": "state", 
+          "state": "North Carolina", 
+          "week": "2018-09-30"
+        }, 
+        "North Dakota": {
+          "class_name": "w20180930_sNorthDakota", 
+          "filter": "state", 
+          "state": "North Dakota", 
+          "week": "2018-09-30"
+        }, 
+        "Ohio": {
+          "class_name": "w20180930_sOhio", 
+          "filter": "state", 
+          "state": "Ohio", 
+          "week": "2018-09-30"
+        }, 
+        "Oklahoma": {
+          "class_name": "w20180930_sOklahoma", 
+          "filter": "state", 
+          "state": "Oklahoma", 
+          "week": "2018-09-30"
+        }, 
+        "Oregon": {
+          "class_name": "w20180930_sOregon", 
+          "filter": "state", 
+          "state": "Oregon", 
+          "week": "2018-09-30"
+        }, 
+        "Pennsylvania": {
+          "class_name": "w20180930_sPennsylvania", 
+          "filter": "state", 
+          "state": "Pennsylvania", 
+          "week": "2018-09-30"
+        }, 
+        "Rhode Island": {
+          "class_name": "w20180930_sRhodeIsland", 
+          "filter": "state", 
+          "state": "Rhode Island", 
+          "week": "2018-09-30"
+        }, 
+        "South Carolina": {
+          "class_name": "w20180930_sSouthCarolina", 
+          "filter": "state", 
+          "state": "South Carolina", 
+          "week": "2018-09-30"
+        }, 
+        "South Dakota": {
+          "class_name": "w20180930_sSouthDakota", 
+          "filter": "state", 
+          "state": "South Dakota", 
+          "week": "2018-09-30"
+        }, 
+        "Tennessee": {
+          "class_name": "w20180930_sTennessee", 
+          "filter": "state", 
+          "state": "Tennessee", 
+          "week": "2018-09-30"
+        }, 
+        "Texas": {
+          "class_name": "w20180930_sTexas", 
+          "filter": "state", 
+          "state": "Texas", 
+          "week": "2018-09-30"
+        }, 
+        "Utah": {
+          "class_name": "w20180930_sUtah", 
+          "filter": "state", 
+          "state": "Utah", 
+          "week": "2018-09-30"
+        }, 
+        "Vermont": {
+          "class_name": "w20180930_sVermont", 
+          "filter": "state", 
+          "state": "Vermont", 
+          "week": "2018-09-30"
+        }, 
+        "Virginia": {
+          "class_name": "w20180930_sVirginia", 
+          "filter": "state", 
+          "state": "Virginia", 
+          "week": "2018-09-30"
+        }, 
+        "Washington": {
+          "class_name": "w20180930_sWashington", 
+          "filter": "state", 
+          "state": "Washington", 
+          "week": "2018-09-30"
+        }, 
+        "West Virginia": {
+          "class_name": "w20180930_sWestVirginia", 
+          "filter": "state", 
+          "state": "West Virginia", 
+          "week": "2018-09-30"
+        }, 
+        "Wisconsin": {
+          "class_name": "w20180930_sWisconsin", 
+          "filter": "state", 
+          "state": "Wisconsin", 
+          "week": "2018-09-30"
+        }, 
+        "Wyoming": {
+          "class_name": "w20180930_sWyoming", 
+          "filter": "state", 
+          "state": "Wyoming", 
+          "week": "2018-09-30"
+        }
+      }
+    }, 
     "2018-10-07": {
       "gender_keys": [
         "ALL", 
