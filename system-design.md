@@ -60,11 +60,10 @@ All data flow in the extension goes through `DataServer` which runs in the backg
 
 ## DataStorage
 
-This extension stores four persistent variables. All read and write access to the persistent variables must go through the object `DataStorage`. There is only one instance of `DataStorage` running in the extension, inside of `DataServer`.
+This extension stores three persistent variables. All read and write access to the persistent variables must go through the object `DataStorage`. There is only one instance of `DataStorage` running in the extension, inside of `DataServer`.
 
-The four persistant variables are:
+The three persistant variables are:
 - `disableMonitor` is a boolean that specifies whether the scanner is disabled.
-- `startDate` records the time when the scanner is first turned on or when the database is last cleared.
 - `ads` contains an array of ads collected.
 - `targets` contains an array of ad targeting information.
 
@@ -90,12 +89,10 @@ An instance of `DataInterface` runs inside of every UI element. `DataInterface` 
 
 `DataInterface` provides the following database-related functionalities to the UI.
 - getMonitorStatus()
-- getStartDate()
 - getAllAds()
 - getAllTargets()
 - enableMonitor()
 - disableMonitor()
-- resetStartDate()
 - clearDatabase()
 
 `DataInterface` provides the following functionalities for the UI to control and observe the state of the scanner.
