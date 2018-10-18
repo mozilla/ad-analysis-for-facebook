@@ -20,6 +20,6 @@ This extension is one of several tools developed by Firefox Research to help you
 
 This extension uses the public data sets collected by ProPublica and New York University.
 
-The [Political Ad Collector]](http://projects.propublica.org/facebook-ads/), created by independent news organization ProPublica, gathers targeted political advertising on Facebook into a database of micro-targeted political ads.
+The [Political Ad Collector](http://projects.propublica.org/facebook-ads/), created by independent news organization ProPublica, gathers targeted political advertising on Facebook into a database of micro-targeted political ads.
 
 The [Online Political Ads Transparency Project](https://engineering.nyu.edu/online-political-ads-transparency-project/) is a collaboration by NYU Tandon doctoral student Laura Edelson, NYU Shanghai visiting undergraduate student Shikhar Sakhuja, and Damon McCoy, Assistant Professor of Computer Science and Engineering.
