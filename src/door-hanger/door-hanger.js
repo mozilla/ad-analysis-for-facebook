@@ -77,12 +77,12 @@ const [AppDoorHanger] = (function() {
 		this.slideIndex = index;
 		d3.selectAll(".panel").style("height", 0);
 		d3.selectAll(`.panel${this.slideIndex}`).style("height", null);
+		this.resizeHeight();
 		d3.select("#Slide")
 			.transition()
 			.duration(SLIDE_TRANSITION_DURATION)
 			.style("left", (-this.slideIndex * 320) + "px");
 		this.monitor.EXIT("slidePanel");
-		this.resizeHeight();
 	};
 
 	/**
@@ -93,7 +93,7 @@ const [AppDoorHanger] = (function() {
 	 **/
 	AppDoorHanger.prototype.resizeHeightImmediately = function() {
 		this.monitor.ENTER("resizeHeight");
-		const bodyHeight = Math.floor(d3.select(`.panel${this.slideIndex}`).node().getBoundingClientRect().height);
+		const bodyHeight = Math.ceil(d3.select(`.panel${this.slideIndex}`).node().getBoundingClientRect().height);
 		d3.select("html").style("height", `${bodyHeight}px`);
 		d3.select("body").style("height", `${bodyHeight}px`);
 		this.monitor.EXIT("resizeHeight");

@@ -401,7 +401,7 @@ const [DataInterface] = (function() {
 			fetch(`tables/${key}.tsv`).then(response => {
 				return response.text();
 			}).then(text => {
-				const data = text.split("\n").map(row => row.split("\t"));
+				const data = text.split("\n").filter(row => row.length > 0).map(row => row.split("\t"));
 				this.monitor.RESULTS(data);
 				this.monitor.EXIT("computeTopAdvertisersTable");
 				resolve(data);

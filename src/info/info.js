@@ -45,7 +45,7 @@ const [AppPage] = (function() {
 		this.monitor.KEY_ENTER("AppPage");
 		this.dataInterface = new DataInterface();
 		this.renderTopAdvertisers = debounce(this.renderTopAdvertisersImmediately, RENDER_PAGE_IMPRESSIONS_DEBOUNCE_DURATION).bind(this);
-		this.sortByKey = SORT_BY_HIGH_SPENDING;
+		this.sortByKey = SORT_BY_HIGH_IMPRESSIONS;
 		this.monitor.KEY_EXIT("AppPage");
 	};
 
@@ -231,7 +231,7 @@ const [AppPage] = (function() {
 
 	const DEFAULT_LOCALE_EN_US = "en-US";
 
-	const MAX_ADVERTISERS = 100;
+	const MAX_ADVERTISERS = 250;
 
 	const ALL = "ALL";
 
@@ -564,7 +564,7 @@ const [AppPage] = (function() {
 					.text(d => `< ${formatter(d.highImpressions)}`);
 				const spendingField = rows.append("span").attr("class", "spending");
 				spendingField.append("span")
-					.text(d => `< $${formatter(d.highSpending)}`);
+					.text(d => d.highSpending === 0 ? "-" : `< $${formatter(d.highSpending)}`);
 			};
 			const renderTopAdvertisersTable = (container) => {
 				container.append("div")
