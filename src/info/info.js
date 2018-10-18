@@ -51,7 +51,7 @@ const [AppPage] = (function() {
 
 	AppPage.prototype._renderTargets = function(elem, showPercentage = false) {
 		const renderAdCount = (d) => {
-			return ` (${d.typeCount} times)`;
+			return (d.typeCount === 1) ? "(1 time)" : ` (${d.typeCount} times)`;
 		};
 		const renderAdPercentage = (d) => {
 			const percentage = Math.round(1000.0 * d.typeCount / d.adCount) / 10.0;
@@ -447,33 +447,37 @@ const [AppPage] = (function() {
 				if (a.lowImpressions !== b.lowImpressions) {
 					return b.lowImpressions - a.lowImpressions;
 				}
-				else {
-					return alphanumeric(a.advertiser).localeCompare(alphanumeric(b.advertiser));
+				if (a.highImpressions !== b.highImpressions) {
+					return b.highImpressions - a.highImpressions;
 				}
+				return alphanumeric(a.advertiser).localeCompare(alphanumeric(b.advertiser));
 			};
 			const highImpressionsSorter = (a, b) => {
 				if (a.highImpressions !== b.highImpressions) {
 					return b.highImpressions - a.highImpressions;
 				}
-				else {
-					return alphanumeric(a.advertiser).localeCompare(alphanumeric(b.advertiser));
+				if (a.lowImpressions !== b.lowImpressions) {
+					return b.lowImpressions - a.lowImpressions;
 				}
+				return alphanumeric(a.advertiser).localeCompare(alphanumeric(b.advertiser));
 			};
 			const lowSpendingSorter = (a, b) => {
 				if (a.lowSpending !== b.lowSpending) {
 					return b.lowSpending - a.lowSpending;
 				}
-				else {
-					return alphanumeric(a.advertiser).localeCompare(alphanumeric(b.advertiser));
+				if (a.highSpending !== b.highSpending) {
+					return b.highSpending - a.highSpending;
 				}
+				return alphanumeric(a.advertiser).localeCompare(alphanumeric(b.advertiser));
 			};
 			const highSpendingSorter = (a, b) => {
 				if (a.highSpending !== b.highSpending) {
 					return b.highSpending - a.highSpending;
 				}
-				else {
-					return alphanumeric(a.advertiser).localeCompare(alphanumeric(b.advertiser));
+				if (a.lowSpending !== b.lowSpending) {
+					return b.lowSpending - a.lowSpending;
 				}
+				return alphanumeric(a.advertiser).localeCompare(alphanumeric(b.advertiser));
 			};
 			const getTopAdvertisers = () => {
 				const threshold = (data) => {
@@ -482,8 +486,10 @@ const [AppPage] = (function() {
 				const data = rawTable.map(row => {
 					return {
 						"advertiser": row[0],
-						"highImpressions": parseInt(row[1]),
-						"highSpending": parseInt(row[2]),
+						"lowImpressions": parseInt(row[1]),
+						"highImpressions": parseInt(row[2]),
+						"lowSpending": parseInt(row[3]),
+						"highSpending": parseInt(row[4]),
 					};
 				});
 				if (this.sortByKey === SORT_BY_LABEL) {
@@ -519,52 +525,97 @@ const [AppPage] = (function() {
 						this.renderTopAdvertisers();
 					};
 				};
-				const labelHeader = header.append("span")
-					.attr("class", "label");
-				labelHeader.append("span")
-					.text("Advertiser");
-				const impressionsHeader = header.append("span")
-					.attr("class", "impressions action actionSortBy actionSortByHighImpressions")
+				const labelHeader = header.append("span").attr("class", "field label")
+					.append("div").attr("class", "doubleLabel action actionSortBy actionSortByLabel")
+					.on("mouseover", onMouseOverEvent)
+					.on("mouseout", onMouseOutEvent)
+					.on("click",createOnClickEvent(SORT_BY_LABEL));
+				labelHeader.append("span").text("Advertiser");
+				labelHeader.append("img")
+					.attr("class", "sort sortAZ")
+					.attr("alt", "Sort by advertiser")
+					.attr("src", "sort_az.svg");
+
+				const impressionsHeader = header.append("span").attr("class", "field impressions");
+				impressionsHeader.append("div").attr("class", "topLabel")
+					.append("span").text("Impressions");
+				const bottomImpressionsHeader = impressionsHeader.append("div").attr("class", "bottomLabel");
+				const bottomLowImpressionsHeader = bottomImpressionsHeader.append("span")
+					.attr("class", "lowImpressions action actionSortBy actionSortByLowImpressions")
+					.on("mouseover", onMouseOverEvent)
+					.on("mouseout", onMouseOutEvent)
+					.on("click",createOnClickEvent(SORT_BY_LOW_IMPRESSIONS));
+				bottomImpressionsHeader.append("span").attr("class", "dash");
+				const bottomHighImpressionsHeader = bottomImpressionsHeader.append("span")
+					.attr("class", "highImpressions action actionSortBy actionSortByHighImpressions")
 					.on("mouseover", onMouseOverEvent)
 					.on("mouseout", onMouseOutEvent)
 					.on("click",createOnClickEvent(SORT_BY_HIGH_IMPRESSIONS));
-				impressionsHeader.append("span")
-					.text("Impressions");
-				impressionsHeader.append("span")
-					.append("img")
-						.attr("class", "sort sortNumber")
-						.attr("alt", "Sort by impressions")
-						.attr("src", "sort_number.svg");
-				const spendingHeader = header.append("span")
-					.attr("class", "spending action actionSortBy actionSortByHighSpending")
+				bottomLowImpressionsHeader.append("span").text("Low");
+				bottomLowImpressionsHeader.append("img")
+					.attr("class", "sort sortNumber")
+					.attr("alt", "Sort by low impressions")
+					.attr("src", "sort_number.svg");
+				bottomHighImpressionsHeader.append("span").text("High");
+				bottomHighImpressionsHeader.append("img")
+					.attr("class", "sort sortNumber")
+					.attr("alt", "Sort by high impressions")
+					.attr("src", "sort_number.svg");
+				const spendingHeader = header.append("span").attr("class", "field spending");
+				spendingHeader.append("div").attr("class", "topLabel")
+					.append("span").text("Spending");
+				const bottomSpendingHeader = spendingHeader.append("div").attr("class", "bottomLabel");
+				const bottomLowSpendingHeader = bottomSpendingHeader.append("span")
+					.attr("class", "lowSpending action actionSortBy actionSortByLowSpending")
 					.on("mouseover", onMouseOverEvent)
 					.on("mouseout", onMouseOutEvent)
-					.on("click", createOnClickEvent(SORT_BY_HIGH_SPENDING));
-				spendingHeader.append("span")
-					.text("Spending");
-				spendingHeader.append("span")
-					.append("img")
-						.attr("class", "sort sortNumber")
-						.attr("alt", "Sort by spending")
-						.attr("src", "sort_number.svg");
+					.on("click",createOnClickEvent(SORT_BY_LOW_SPENDING));
+				bottomSpendingHeader.append("span").attr("class", "dash");
+				const bottomHighSpendingHeader = bottomSpendingHeader.append("span")
+					.attr("class", "highSpending action actionSortBy actionSortByHighSpending")
+					.on("mouseover", onMouseOverEvent)
+					.on("mouseout", onMouseOutEvent)
+					.on("click",createOnClickEvent(SORT_BY_HIGH_SPENDING));
+				bottomLowSpendingHeader.append("span").text("Low");
+				bottomLowSpendingHeader.append("img")
+					.attr("class", "sort sortNumber action actionSortBy actionSortByLowSpending")
+					.attr("alt", "Sort by low spending")
+					.attr("src", "sort_number.svg");
+				bottomHighSpendingHeader.append("span").text("High");
+				bottomHighSpendingHeader.append("img")
+					.attr("class", "sort sortNumber action actionSortBy actionSortByHighSpending")
+					.attr("alt", "Sort by high spending")
+					.attr("src", "sort_number.svg");
 			};
 			const renderTableBody = (body) => {
 				const rows = body.selectAll("div.row").data(getTopAdvertisers).enter()
 					.append("div")
 					.attr("class", "row");
-				const labelField = rows.append("span").attr("class", "label");
-				labelField.append("span")
+				rows.append("span")
+					.attr("class", "field label")
 					.append("a")
 						.attr("href", d => getQueryURL(d.advertiser))
 						.attr("rel", "noopener noreferrer")
 						.attr("target", "_blank")
 						.text(d => d.advertiser);
-				const impressionsField = rows.append("span").attr("class", "impressions");
-				impressionsField.append("span")
-					.text(d => `< ${formatter(d.highImpressions)}`);
-				const spendingField = rows.append("span").attr("class", "spending");
-				spendingField.append("span")
-					.text(d => d.highSpending === 0 ? "-" : `< $${formatter(d.highSpending)}`);
+				rows.append("span")
+					.attr("class", "field lowImpressions")
+					.text(d => `${formatter(d.lowImpressions)}`);
+				rows.append("span")
+					.attr("class", "field dash")
+					.text("-");
+				rows.append("span")
+					.attr("class", "field highImpressions")
+					.text(d => `${formatter(d.highImpressions)}`);
+				rows.append("span")
+					.attr("class", "field lowSpending")
+					.text(d => d.lowSpending === 0 && d.highSpending === 0 ? "" : `$${formatter(d.lowSpending)}`);
+				rows.append("span")
+					.attr("class", "field dash")
+					.text(d => d.highSpending === 0 ? "" : "-");
+				rows.append("span")
+					.attr("class", "field highSpending")
+					.text(d => d.highSpending === 0 ? "" : `$${formatter(d.highSpending)}`);
 			};
 			const renderTopAdvertisersTable = (container) => {
 				container.append("div")

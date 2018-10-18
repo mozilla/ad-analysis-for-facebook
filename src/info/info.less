@@ -11,11 +11,16 @@ html, body, div, h1, h2, h3, h4 {
 	border: 0;
 }
 
+html {
+	margin-bottom: -1px;
+}
+
 body {
 	font-family: @pageFontFamily;
 	font-weight: @fontNormalWeight;
 	font-size: 14px;
 	background-color: @white-100;
+	margin-bottom: -1px;
 }
 
 a {
@@ -257,7 +262,7 @@ select {
 				max-height: 0px;
 				margin-bottom: 32px;
 				overflow-y: scroll;
-		
+	
 				.targetValue {
 					display: inline-block;
 					font-size: 12px;
@@ -292,11 +297,11 @@ select {
 			}
 		}
 	}
-	
+
 	#PageImpressionsContainer {
 		.topAdvertisersTable {
 			display: none;
-			font-size: 16px;
+			font-size: 14px;
 			a {
 				color: @extensionLightBlue;
 				text-decoration: none;
@@ -311,27 +316,25 @@ select {
 					* {
 						pointer-events: none;
 					}
+				}
+				.sort {
+					height: 14px;
+					vertical-align: -2px;
+					margin-left: 5px;
+				}
+				.sortActive {
+					font-weight: @fontNormalWeight;
 					.sort {
-						height: 14px;
-						vertical-align: -2px;
-						margin-left: 5px;
-						visibility: hidden;
+						opacity: 1.0;
 					}
-					&.sortActive {
-						.sort {
-							visibility: visible;
-							opacity: 1.0;
-						}
+				}
+				.sortInactive {
+					.sort {
+						opacity: 0.25;
 					}
-					&.sortInactive {
-						.sort {
-							visibility: visible;
-							opacity: 0.25;
-						}
-					}	
-					&.hover {
-						color: @extensionDarkBlue;
-					}
+				}	
+				&.hover {
+					color: @extensionDarkBlue;
 				}
 			}
 			.body {
@@ -349,20 +352,75 @@ select {
 			}
 			.header, .row {
 				white-space: nowrap;
-				.label {
+				.field {
 					display: inline-block;
 					vertical-align: top;
 					white-space: normal;
-					width: 425px;
-					overflow: hidden;
-				}
-				.impressions, .spending, .counts {
-					display: inline-block;
-					vertical-align: top;
-					white-space: normal;
-					margin-left: 10px;
-					width: 160px;
-					overflow: hidden;
+					&.label {
+						width: 340px;
+						.doubleLabel {
+							height: 36px;
+							span {
+								vertical-align: -8px;
+							}
+							img {
+								vertical-align: -10px;
+							}
+						}
+					}
+					&.impressions,
+					&.spending {
+						margin-left: 50px;
+						width: 155px;
+						.topLabel {
+							margin-bottom: 2px;
+						}
+						.bottomLabel {
+							font-weight: @fontSemiLightWeight;
+							img {
+								height: 12px;
+								vertical-align: -2px;
+							}
+							.dash {
+								display: inline-block;
+								width: 25px;
+							}
+							.lowImpressions {
+								display: inline-block;
+								width: 65px;
+							}
+							.highImpressions {
+								display: inline-block;
+								width: 65px;
+							}
+							.lowSpending {
+								display: inline-block;
+								width: 60px;
+							}
+							.highSpending {
+								display: inline-block;
+								width: 60px;
+							}
+						}
+					}
+					&.dash {
+						width: 25px;
+						text-align: center;
+					}
+					&.lowImpressions {
+						margin-left: 50px;
+						width: 65px;
+					}
+					&.highImpressions {
+						width: 65px;
+					}
+					&.lowSpending {
+						margin-left: 50px;
+						width: 60px;
+					}
+					&.highSpending {
+						width: 60px;
+					}
 				}
 			}
 		}

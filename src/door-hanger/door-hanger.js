@@ -259,7 +259,7 @@ const [AppDoorHanger] = (function() {
 					.text(" ");
 				firstRow.append("span")
 					.attr("class", "count")
-					.text(d => `(${d.count} times)`);
+					.text(d => d.count === 1 ? "(1 time)" : `(${d.count} times)`);
 				secondRow.append("span")
 					.attr("class", "bar")
 					.style("width", barWidth);
