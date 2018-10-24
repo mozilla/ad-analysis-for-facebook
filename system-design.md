@@ -199,20 +199,3 @@ The extension contains data from two public datasets released by [ProPublica](ht
 
 The original datasets are available at https://www.propublica.org/datastore/dataset/political-advertisements-from-facebook and https://github.com/online-pol-ads/FacebookApiPolAdsCollector, respectively.
 
-# Instructions 
-## Load the Add-on in Firefox
-
-Enter `about:debugging` in the address bar. Load the Add-on as a temporary extension by selecting `dist/manifest.json`.
-
-## Set up a development environment
-
-To install the required libraries, run:
-```
-npm install
-```
-
-To start the continuous build system, run:
-```
-npm start
-```
-The above script will automatically monitor the `src` folder and regenerate relevant files in the `dist` folder including linting `*.js` files, minifying `*.js` and `*.html` files, and compiling `*.less` into `*.css`.

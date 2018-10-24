@@ -1,5 +1,7 @@
 # Ad Analysis for Facebook
 
+Get the extension from [Add-ons for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/ad-analysis-for-facebook/).
+
 ## How Facebook Helps Advertisers Target You
 
 If you use Facebook, it probably comes as no surprise that Facebook collects a lot of information about you. This includes information you’ve shared about yourself as well as information about your activity on Facebook and other websites — things like check-ins, searches, and status updates.
@@ -23,3 +25,22 @@ This extension uses the public data sets collected by ProPublica and New York Un
 The [Political Ad Collector](http://projects.propublica.org/facebook-ads/), created by independent news organization ProPublica, gathers targeted political advertising on Facebook into a database of micro-targeted political ads.
 
 The [Online Political Ads Transparency Project](https://engineering.nyu.edu/online-political-ads-transparency-project/) is a collaboration by NYU Tandon doctoral student Laura Edelson, NYU Shanghai visiting undergraduate student Shikhar Sakhuja, and Damon McCoy, Assistant Professor of Computer Science and Engineering.
+
+# Instructions 
+
+## Load the Add-on in Firefox
+
+Enter `about:debugging` in the address bar. Load the Add-on as a temporary extension by selecting `dist/manifest.json`.
+
+## Set up a development environment
+
+To install the required libraries, run:
+```
+npm install
+```
+
+To start the continuous build system, run:
+```
+npm start
+```
+The above script will automatically monitor the `src` folder and regenerate relevant files in the `dist` folder including linting `*.js` files, minifying `*.js` and `*.html` files, and compiling `*.less` into `*.css`.
