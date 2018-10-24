@@ -285,8 +285,11 @@ const [AppDoorHanger] = (function() {
 		const renderRemainingTargetTypes = () => {
 			const data = this.stats.remainingTargetTypes;
 			const remainingDataCount = data.length;
-			d3.select("#RemainingTargetTypes").style("display", remainingDataCount === 0 ? "none" : "block");
-			d3.selectAll(".strPlusNOtherCategories").text(`Plus ${remainingDataCount} other types of data`);
+			const remainingDataStr = (remainingDataCount === 1) ?
+				`See all targets and ${remainingDataCount} other type of data` :
+				`See all targets and ${remainingDataCount} other types of data`;
+			const seeAllTargetsStr = (remainingDataCount === 0) ? "See all targets" : remainingDataStr;
+			d3.selectAll(".strSeeAllTargets").text(seeAllTargetsStr);
 		};
 
 		this.monitor.ENTER("renderDatabaseStats");
