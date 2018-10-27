@@ -1,0 +1,1 @@
+const Monitor=function(){const t=function(){};this.KEY_ENTER=t,this.KEY_EXIT=t,this.ENTER=t,this.EXIT=t,this.EVENT=t,this.OPTIONS=t,this.RESULTS=t,this.DATA=t,this.ASSERT=t};

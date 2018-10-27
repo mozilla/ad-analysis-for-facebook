@@ -6,6 +6,7 @@ const IS_PRODUCTION = true;
 const IS_QA_TESTING = false;
 const NODE = "node_modules/";
 const DIST = "dist/";
+const DOCS = "docs/";
 
 // Load logical flows
 const iƒ = require("gulp-if");
@@ -90,7 +91,8 @@ gulp.task("js:lint", function() {
 
 gulp.task("js:minify", function() {
 	return gulp.src([
-			"src/**/*.js"
+			"src/**/*.js",
+			"!src/docs/*.js",
 		].concat(EXCLUDE_DIRS))
 		.pipe(iƒ(IS_PRODUCTION, minifyJs({
 			"ext": {
@@ -102,9 +104,22 @@ gulp.task("js:minify", function() {
 		.pipe(gulp.dest(DIST));
 });
 
+gulp.task("js:minify:docs", function() {
+	return gulp.src("src/docs/*.js")
+		.pipe(iƒ(IS_PRODUCTION, minifyJs({
+			"ext": {
+				"src": "-combined.js",
+				"min": ".js"
+			},
+			"noSource": true,
+		})))
+		.pipe(gulp.dest(DOCS));
+});
+
 gulp.task("less", function() {
 	return gulp.src([
 			"src/**/*.less",
+			"!src/docs/*.less",
 			"!src/common/*.less",
 			"!src/photon/*.less",
 		].concat(EXCLUDE_DIRS))
@@ -114,15 +129,33 @@ gulp.task("less", function() {
 		.pipe(gulp.dest(DIST));	
 });
 
+gulp.task("less:docs", function() {
+	return gulp.src("src/docs/*.less")
+		.pipe(less())
+		.pipe(extReplace(".css"))
+		.pipe(cleanCss())
+		.pipe(gulp.dest(DOCS));	
+});
+
 gulp.task("html", function() {
 	return gulp.src([
-			"src/**/*.html"
+			"src/**/*.html",
+			"!src/docs/*.html",
 		].concat(EXCLUDE_DIRS))
 		.pipe(minifyHtml({
 			"collapseWhitespace": true,
 			"removeComments": true,
 		}))
 		.pipe(gulp.dest(DIST));
+});
+
+gulp.task("html:docs", function() {
+	return gulp.src("src/docs/*.html")
+		.pipe(minifyHtml({
+			"collapseWhitespace": true,
+			"removeComments": true,
+		}))
+		.pipe(gulp.dest(DOCS));
 });
 
 gulp.task("assets:svg", function() {
@@ -158,6 +191,7 @@ gulp.task("build", [
 	"js:lint", "js:minify",
 	"less",
 	"html",
+	"js:minify:docs", "less:docs", "html:docs",
 	"assets:svg", "assets:png", "assets:data",
 	"addon:manifest"
 ]);
@@ -168,6 +202,9 @@ gulp.task("watch", function() {
 	gulp.watch("src/**/*.html", ["html"]);
 	gulp.watch("src/**/*.svg", ["assets:svg"]);
 	gulp.watch("src/**/*.png", ["assets:png"]);
+	gulp.watch("src/docs/*.js", ["js:lint", "js:minify:docs"]);
+	gulp.watch("src/docs/*.less", ["less:docs"]);
+	gulp.watch("src/docs/*.html", ["html:docs"]);
 	gulp.watch("data/*.json", ["assets:data"]);
 	gulp.watch("manifest.json", ["addon:manifest"]);
 });
