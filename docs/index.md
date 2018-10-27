@@ -1,4 +1,17 @@
-[Interactive Information Page](https://mozilla.github.io/fb-online-targeting/info.html)
+# MozFest 2018
+
+[Interactive Demo Page for MozFest](https://mozilla.github.io/ad-analysis-for-facebook/info.html)
+
+## Internet Research Hub
+- Saturday, October 27, 2018
+- Time: 11:00am to 11:30am
+- Location: Level 1 - 101
+
+## Emerging Sessions
+- Saturday, October 27, 2018
+- Time: 2:00pm to 3:00pm
+- Location: Level 8 - 803
+
 
 # How Facebook Helps Advertisers Target You
 
