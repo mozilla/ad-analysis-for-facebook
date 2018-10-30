@@ -177,6 +177,25 @@ gulp.task("assets:data", function() {
 		.pipe(gulp.dest(`${DIST}info`));
 });
 
+gulp.task("assets:svg:docs", function() {
+	return gulp.src("src/info/*.svg")
+		.pipe(gulp.dest(DOCS));
+});
+
+gulp.task("assets:png:docs", function() {
+	return gulp.src("src/info/*.png")
+		.pipe(gulp.dest(DOCS));
+});
+
+gulp.task("assets:data:docs", function() {
+	return gulp.src([
+			"data/*.json",
+			"data/**/*.json",
+			"data/**/*.tsv",
+		])
+		.pipe(gulp.dest(DOCS));
+});
+
 gulp.task("addon:manifest", function() {
 	return gulp.src(IS_QA_TESTING ? "manifest-qa-testing.json" : "manifest-production.json")
 		.pipe(rename("manifest.json"))
@@ -193,6 +212,7 @@ gulp.task("build", [
 	"html",
 	"js:minify:docs", "less:docs", "html:docs",
 	"assets:svg", "assets:png", "assets:data",
+	"assets:svg:docs", "assets:png:docs", "assets:data:docs",
 	"addon:manifest"
 ]);
 
@@ -205,6 +225,8 @@ gulp.task("watch", function() {
 	gulp.watch("src/docs/*.js", ["js:lint", "js:minify:docs"]);
 	gulp.watch("src/docs/*.less", ["less:docs"]);
 	gulp.watch("src/docs/*.html", ["html:docs"]);
-	gulp.watch("data/*.json", ["assets:data"]);
+	gulp.watch("src/info/*.svg", ["assets:svg:docs"]);
+	gulp.watch("src/info/*.png", ["assets:png:docs"]);
+	gulp.watch("data/*.json", ["assets:data", "assets:data:docs"]);
 	gulp.watch("manifest.json", ["addon:manifest"]);
 });
