@@ -1,6 +1,6 @@
 # MozFest 2018
 
-[Interactive Demo Page for MozFest](https://mozilla.github.io/fb-online-targeting/info.html)
+[Interactive Demo Page for MozFest](https://mozilla.github.io/ad-analysis-for-facebook/info.html)
 
 ## Internet Research Hub
 - Saturday, October 27, 2018
