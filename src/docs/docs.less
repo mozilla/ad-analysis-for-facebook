@@ -1,0 +1,447 @@
+@import (reference) "../photon/photon-colors.less";
+@import (reference) "../common/common.less";
+
+@pageFontFamily: "Fira Sans", sans-serif;
+@columnWidth: 800px;
+@columnPadding: 200px;
+
+html, body, div, h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html {
+	margin-bottom: -1px;
+}
+
+body {
+	font-family: @pageFontFamily;
+	font-weight: @fontNormalWeight;
+	font-size: 14px;
+	background-color: @white-100;
+	margin-bottom: -1px;
+}
+
+a {
+	color: @extensionLightBlue;
+}
+
+select {
+	font-family: @pageFontFamily;
+	font-weight: @fontNormalWeight;
+	font-size: 14px;
+	padding: 2px;
+}
+
+.action {
+	cursor: pointer;
+	user-select: none;
+	-moz-user-select: none;
+}
+
+.headerColumn {
+	min-width: @columnWidth + @columnPadding * 2;
+	height: 540px;
+	background-image: url("wave-header.svg"), linear-gradient(177deg, @extensionPurple, @extensionDarkBlue);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	.socialBar {
+		width: 100%;
+		background: @shareHeaderTransparentBar;
+		.social {
+			width: @columnWidth;
+			margin: 0 auto;
+			.logo {
+				img {
+					margin-top: 13px;
+					margin-bottom: 15px;
+					width: 130px;
+					height: 42px;
+				}
+			}
+			.shares {
+				float: right;
+				margin-top: 25px;
+				margin-bottom: 26px;
+				line-height: 19px;
+				font-size: 16px;
+				a {
+					color: @textWhiteForeground;
+					text-decoration: none;
+				}
+				img.facebook {
+					vertical-align: -4px;
+					margin-right: 2px;
+				}
+				img.twitter {
+					vertical-align: -4px;
+					margin-left: 2px;
+				}
+				span {
+					margin-left: 2px;
+				}
+			}
+		}
+	}
+	.main {
+		width: @columnWidth;
+		padding: 0 @columnPadding;
+		margin: 0 auto;
+		.icon {
+			padding-top: 67px;
+			padding-bottom: 25px;
+			img {
+				height: 98px;
+				width: 98px;				
+			}
+		}
+		.title {
+			color: @textWhiteForeground;
+			font-weight: @fontSemiBoldWeight;
+			font-size: 50px;
+			line-height: 72px;
+		}
+		.subtitle {
+			padding-bottom: 60px;
+			color: @textWhiteForeground;
+			font-size: 30px;
+			line-height: 36px;
+		}
+		.getExtensionBox {
+			text-align: center;
+			padding-bottom: 40px;
+			color: @textWhiteForeground;
+			font-size: 18px;
+			line-height: 24px;
+			a {
+				color: @textWhiteForeground;
+				text-decoration: none;
+				.getExtension {
+					display: inline-block;
+					padding: 12px 24px;
+					border: 1px solid @white-100;
+					&:hover {
+						background-color: @extensionLightBlue;
+					}
+				}
+			}
+		}
+	}
+}
+
+.centerColumn {
+	width: @columnWidth;
+	padding: 0 @columnPadding;
+	margin: 0 auto 125px auto;
+
+	.title {
+		margin-top: 40px;
+		max-width: 600px;
+		font-size: 36px;
+		font-weight: @fontLightWeight;
+		color: @extensionLightBlue;
+		letter-spacing: 0;
+		line-height: 40px;
+	}
+	.subtitle {
+		margin-top: 30px;
+		font-size: 22px;
+		font-weight: @fontSemiBoldWeight;
+		color: @textBlackForeground;
+		letter-spacing: 0;
+		line-height: 29px;
+	}
+	.paragraph, .control {
+		margin-top: 30px;
+		font-size: 16px;
+		font-weight: @fontNormalWeight;
+		color: @textGreyForeground;
+		letter-spacing: 0;
+		line-height: 30px;
+	}
+	.control {
+		.label {
+			&.disabled {
+				opacity: 0.25;
+			}
+		}
+	}
+	.control + .control {
+		margin-top: 0;
+	}
+	.radio {
+		margin-left: 6px;
+		margin-right: 8px;
+	}
+	.singleImageLayout {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	.doubleImageLayout {
+		position: relative;
+		display: inline-block;
+		left: -@columnPadding;
+		width: @columnWidth;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	.tabsContainer {
+		width: 798px;
+		margin-top: 48px;
+		margin-bottom: 48px;
+		box-shadow: 1px 2px 4px 3px @tabsContainerGreyShadow;	
+		.tabsHeadContainer {
+			.tabHead {
+				display: inline-block;
+				padding: 20px 0;
+				width: 399px;
+				text-align: center;
+				&.disabled {
+					cursor: not-allowed;
+				}
+				&.inactive {
+					color: @extensionGrey;
+					background: @tabsContainerGreyShadow;
+				}
+			}
+		}
+		.tabsBodyContainer {
+			padding: 48px;
+		}
+	}
+	.topAdvertisersContainer {
+		width: 798px;
+		margin-top: 24px;
+		margin-bottom: 72px;
+		box-shadow: 1px 2px 4px 3px @tabsContainerGreyShadow;
+		min-height: 100px;
+		overflow: hidden;
+	}
+
+	#YourTargetsContainer, #PublicTargetsContainer {
+		.msg {
+			margin-top: 64px;
+			margin-bottom: 64px;
+			text-align: center;
+			display: none;
+		}
+		.targetTypeHeader {
+			.label {
+			}
+		}
+		.targetTypeBody {
+			.bar {
+				display: inline-block;
+				background: @extensionDarkBlue;
+				height: 10px;
+			}
+			.count {
+				margin-left: 4px;
+				font-size: 11px;
+				color: @extensionGrey;
+				letter-spacing: -0.07px;
+			}
+		}
+		.targetValuesNoContainer {
+			margin-top: 2px;
+			margin-bottom: 18px;
+			line-height: 16px;
+			vertical-align: bottom;
+			font-size: 11px;
+			.label {
+				color: @extensionLightBlue;
+				cursor: not-allowed;
+			}
+			.text {
+				color: @extensionGrey;
+			}
+		}
+		.targetValuesContainer {
+			.targetValuesHead {
+				margin-bottom: 16px;
+				line-height: 16px;
+				vertical-align: bottom;
+				.label {
+					font-size: 11px;
+					color: @extensionLightBlue;
+				}
+				.arrow {
+					margin-left: 4px;
+				}
+				.action {
+					* {
+						pointer-events: none;
+					}
+				}
+			}
+			.targetValuesBody {
+				max-height: 0px;
+				margin-bottom: 32px;
+				overflow-y: scroll;
+	
+				.targetValue {
+					display: inline-block;
+					font-size: 12px;
+					background: @targetValueLightGreyBackground;
+					border: @targetValueGreyBorder;
+					border-radius: @targetValueBorderRadius;
+					padding: @targetValuePadding;
+					margin: 2px;
+				}
+			}
+			&.isCollapsed {
+				.openContainer {
+					display: inline-block;
+				}
+				.closeContainer {
+					display: none;
+				}
+				.targetValuesBody {
+					display: none;
+				}
+			}
+			&.isExpanded {
+				.openContainer {
+					display: none;
+				}
+				.closeContainer {
+					display: inline-block;
+				}
+				.targetValuesBody {
+					display: block;
+				}
+			}
+		}
+	}
+
+	#PageImpressionsContainer {
+		.topAdvertisersTable {
+			display: none;
+			font-size: 14px;
+			a {
+				color: @extensionLightBlue;
+				text-decoration: none;
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+			.header {
+				padding: 8px 20px 6px 20px;
+				background: @tableHeaderBackground;
+				.action {
+					* {
+						pointer-events: none;
+					}
+				}
+				.sort {
+					height: 14px;
+					vertical-align: -2px;
+					margin-left: 5px;
+				}
+				.sortActive {
+					font-weight: @fontNormalWeight;
+					.sort {
+						opacity: 1.0;
+					}
+				}
+				.sortInactive {
+					.sort {
+						opacity: 0.25;
+					}
+				}	
+				&.hover {
+					color: @extensionDarkBlue;
+				}
+			}
+			.body {
+				max-height: 600px;
+				overflow-x: hidden;
+				overflow-y: scroll;
+				.row {
+					padding: 6px 20px 6px 20px;
+					border-bottom: @tableGreyGridLine;
+					&:last-child {
+						border-bottom: none;
+						padding-bottom: 10px;
+					}
+				}
+			}
+			.header, .row {
+				white-space: nowrap;
+				.field {
+					display: inline-block;
+					vertical-align: top;
+					white-space: normal;
+					&.label {
+						width: 340px;
+						.doubleLabel {
+							height: 36px;
+							span {
+								vertical-align: -8px;
+							}
+							img {
+								vertical-align: -10px;
+							}
+						}
+					}
+					&.impressions,
+					&.spending {
+						margin-left: 50px;
+						width: 155px;
+						.topLabel {
+							margin-bottom: 2px;
+						}
+						.bottomLabel {
+							font-weight: @fontSemiLightWeight;
+							img {
+								height: 12px;
+								vertical-align: -2px;
+							}
+							.dash {
+								display: inline-block;
+								width: 25px;
+							}
+							.lowImpressions {
+								display: inline-block;
+								width: 65px;
+							}
+							.highImpressions {
+								display: inline-block;
+								width: 65px;
+							}
+							.lowSpending {
+								display: inline-block;
+								width: 60px;
+							}
+							.highSpending {
+								display: inline-block;
+								width: 60px;
+							}
+						}
+					}
+					&.dash {
+						width: 25px;
+						text-align: center;
+					}
+					&.lowImpressions {
+						margin-left: 50px;
+						width: 65px;
+					}
+					&.highImpressions {
+						width: 65px;
+					}
+					&.lowSpending {
+						margin-left: 50px;
+						width: 60px;
+					}
+					&.highSpending {
+						width: 60px;
+					}
+				}
+			}
+		}
+	}
+}

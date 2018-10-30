@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 DRAFT//EN">
+<html lang="en">
+<head>
+	<title>Ad Analysis for Facebook</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=1200, initial-scale=1"/>
+	<meta name="description" content="See how Facebook helps advertisers micro-target you. Let Ad Analysis for Facebook help you understand how Facebook delivers the advertising you see and go beyond your filter bubble to find ads you don’t see."/>
+	<script type="text/javascript" src="d3.js"></script>
+	<script type="text/javascript" src="monitor.js"></script>
+	<script type="text/javascript" src="data-interface.js"></script>
+	<script type="text/javascript" src="docs.js"></script>
+	<link rel="stylesheet" type="text/css" href="docs.css"/>
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+	<div class="headerColumn">
+		<div class="socialBar">
+			<div class="social">
+				<div class="shares">
+					<span class="action actionFacebookShare">
+						<a href="https://www.facebook.com/sharer/sharer.php?u=https://addons.mozilla.org/en-US/firefox/addon/ad-analysis-for-facebook/" target="_blank" rel="noopener noreferrer">
+							<img class="facebook" src="facebook_icon.svg" alt="Facebook Icon"/>
+							<span class="str strShare">Share</span>
+						</a>
+					</span>
+					<span>&nbsp;</span>
+					<span class="action actionTwitterTweet">
+						<a href="https://twitter.com/intent/tweet?url=https://addons.mozilla.org/en-US/firefox/addon/ad-analysis-for-facebook/" target="_blank" rel="noopener noreferrer">
+							<img class="twitter" src="twitter_icon.svg" alt="Twitter Icon"/>
+							<span class="str strTweet">Tweet</span>
+						</a>
+					</span>
+				</div>
+				<div class="logo"><img src="firefox_logo.png" srcset="firefox_logo.png 1x, firefox_logo@2x.png 2x" alt="Firefox Logo"/></div>
+			</div>
+		</div>
+		<div class="main">
+			<div class="icon"><img src="fb_reveal_herospace_icon.svg" alt="Ad Analysis for Facebook Icon" style="width: 100px"/></div>
+			<div class="title strTitle">Ad Analysis for Facebook</div>
+			<div class="subtitle strSubtitle">See how Facebook helps advertisers target you</div>
+			<div class="getExtensionBox"><a href="https://addons.mozilla.org/en-US/firefox/addon/ad-analysis-for-facebook/" rel="noopener noreferrer" target="_blank"><div class="getExtension strGetExtension">Get the extension</div></a></div>
+		</div>
+	</div>
+	<div class="centerColumn" role="main">
+
+		<div class="title">What Facebook knows about you</div>
+
+		<div class="paragraph">If you use Facebook, it probably comes as no surprise that Facebook collects a lot of information about you. This includes information you&apos;ve shared about yourself as well as information about your activity on Facebook and other websites — things like check-ins, searches, and status updates. You can <a href="https://www.facebook.com/help/930396167085762/" rel="noopener noreferrer" target="_blank">view or download more than 50 categories of data</a>.</div>
+
+		<div class="paragraph">What you may not know is that even when you haven&apos;t shared interests, Facebook makes guesses about your views and preferences based on your activity. This is also used to target you, but it&apos;s not as easy for you to see this. When you use Ad Analysis for Facebook, you can see what Facebook knows about you and how that affects the advertising you see.</div>
+
+		<div class="title">How Facebook uses what it knows</div>
+
+		<div class="paragraph">Unlike the large target audiences of traditional mass media, Facebook is able to micro-target much smaller groups of people with highly specific advertising messages. How does the social networking site use specific information about you for targeted advertising? While Facebook does not give data directly to advertisers, it does allow advertisers to target people who match selected criteria.</div>
+
+		<div class="paragraph">Like other forms of advertising, Facebook provides targeting based on simple demographics like age, gender, or location.  It also provides targeting based on your stated interests. These interests are part of the data that Facebook allows you to download.</div>
+
+		<div class="paragraph">Facebook also infers information about you based on the data it gathers from you, your activities, and even from your relationship to others in your network. Facebook also uses these inferred target values to you as &ldquo;categories&rdquo; that advertisers can use to target individual ads. Facebook does not make these advertising categories available to you as a download, which can make it difficult to see the bigger picture of how you&apos;re being targeted over time on Facebook.</div>
+
+		<div class="paragraph" id="SeeAllTargets">That is where Ad Analysis for Facebook can help. By using this extension, you can get a fuller picture and see a collection of targeting data used to deliver advertising to you.  You can also compare a wide range of targets shared as a public data set by thousands of other Facebook users.</div>
+
+		<div class="tabsContainer">
+			<div class="tabsHeadContainer">
+				<div class="tabHead action actionShowYourTargets">Your Targeting Data</div>
+				<div class="tabHead action actionShowPublicTargets">Public Targeting Data</div>
+			</div>
+			<div class="tabsBodyContainer">
+				<div id="YourTargetsContainer">
+					<div class="msg msgNoAdsCollected str strNoAdsCollected">Visit Facebook to start collecting ads.</div>
+				</div>
+				<div id="PublicTargetsContainer"></div>
+			</div>
+		</div>
+
+		<div class="title">How the Ad Analysis for Facebook extension works</div>
+
+		<div class="paragraph">In order to work, the extension must be on and <a href="http://www.facebook.com/" rel="noopener noreferrer" target="_blank">www.facebook.com</a> must be open in the Firefox browser. If the extension is off, or if you are on any website other than www.facebook.com, the extension will do nothing.</div>
+
+		<div class="paragraph">While you are browsing Facebook, the extension scans the webpage for posts that are visible only in the browser window. It checks for posts that include the phrase &ldquo;sponsored&rdquo; to determine which posts are ads.</div>
+
+		<div class="singleImageLayout"><img src="advert.png" srcset="advert.png 1x, advert@2x.png 2x" alt="An example of a Facebook post"/></div>
+
+		<div class="paragraph">Then, the extension collects the targeting information available in the modal window opened from the &ldquo;Why am I seeing this?&rdquo; menu. This automates the manual steps you would need to take to open the menu and read the modal window for each ad if you wanted to track this information on your own. </div>
+
+		<div class="paragraph">The targeting information you see in the Ad Analysis for Facebook panel that extends from the toolbar represents roughly the last 7 days of posts you view. The targeting information you see on this page under Your Targeting Data represents all the posts you&apos;ve viewed since you&apos;ve started using this extension.</div>
+
+		<div class="doubleImageLayout"><img src="why_am_i_seeing_this.png" srcset="why_am_i_seeing_this.png 1x, why_am_i_seeing_this@2x.png 2x" alt="Examples of a Facebook post with its menu open showing the 'Why am I seeing this?' menu item, and a modal window containing ad targeting information."/></div>
+
+		<div class="paragraph">All of the targeting information displayed by this extension remains on your computer. None of it is sent to Mozilla or third parties. </div>
+
+		<div class="paragraph">This extension is not a Facebook app and does not use the Facebook API. Unlike apps that use the Facebook API, this extension does not share your Facebook data with Facebook or other third parties.</div>
+
+		<div class="title">Peek outside your filter bubble</div>
+
+		<div class="paragraph">Seeing how and why you&apos;re targeted for advertising is one way to examine how Facebook shapes the content you&apos;re likely to see and how that might influence your opinions and beliefs. But what about the advertising you don&apos;t see? What messages are you being excluded from, and what messages do other people in your community see? How does that shape the conversations people are having online and the things people do offline?</div>
+
+		<div class="paragraph">Facebook maintains its own <a href="https://www.facebook.com/business/help/167836590566506/" rel="noopener noreferrer" target="_blank">Ad Archive</a>, which offers Facebook users a simple keyword search tool to view ads related to politics or issues of national importance.</div>
+
+		<div class="paragraph" id="TopAdvertisers">The Ad Archive is useful if you know what you are looking for, but may not help you if you are trying to answer questions like &ldquo;Who is spending the most money on political ads in my state?&rdquo; or &ldquo;If I am a Millennial, do I see different ads than Baby Boomers?&rdquo; Using the tool below, you can see a list of top advertisers; filter advertisers by state, gender, and age; and link to advertisers&apos; ads.</div>
+
+		<div class="control">Top Facebook political advertisers <select class="select selectTopAdvertisersByWeek"></select></div>
+
+		<div class="control"><input type="radio" name="filterBy" class="radio radioFilterByState" checked="checked"/><span class="label labelTopAdvertisersByState">Filter by state: </span><select class="select selectTopAdvertisersByState"></select></div>
+
+		<div class="control"><input type="radio" name="filterBy" class="radio radioFilterByGenderAndAge"/><span class="label labelTopAdvertisersByGenderAndAge">Filter by gender and age: </span><select class="select selectTopAdvertisersByGender"></select> <select class="select selectTopAdvertisersByAge"></select></div>
+
+
+		<div class="topAdvertisersContainer">
+			<div id="PageImpressionsContainer"></div>
+		</div>
+
+		<div class="title">More about Ad Analysis for Facebook</div>
+
+		<div class="subtitle">Source code</div>
+
+		<div class="paragraph">Ad Analysis for Facebook is an open source project from Mozilla, makers of the Firefox browser.  You can access code and supporting documentation on <a href="https://github.com/mozilla/ad-analysis-for-facebook/" rel="noopener noreferrer" target="_blank">GitHub</a>.</div>
+
+		<div class="subtitle">Your privacy</div>
+
+		<div class="paragraph">This extension only collects information from the www.facebook.com page when the extension is on and Facebook is in the active tab on Firefox.</div>
+
+		<div class="paragraph">This extension collects information from Facebook ads that appear on your screen. It does not collect information from your posts.</div>
+
+		<div class="paragraph">This extension stores the information it collects from the www.facebook.com webpage in the browser. It does not send that data to Mozilla or any other entity.</div>
+
+		<div class="paragraph">If other users log in to www.facebook.com using Firefox on this computer, this extension may show and collect information from the ads displayed to them, or allow them to see the ads targeted to you.</div>
+
+		<div class="paragraph">You can clear the information saved by this extension in the &ldquo;Clear all collected ads&rdquo; section of the toolbar panel.</div>
+
+		<div class="subtitle">Credits</div>
+
+		<div class="paragraph">This extension is one of several tools developed by Firefox Research to help you understand how websites use your personal information and how that affects what you see — and what you don&apos;t — online.</div>
+
+		<div class="paragraph">This extension uses the public data sets collected by ProPublica and New York University.</div>
+
+		<div class="paragraph">The <a href="https://projects.propublica.org/facebook-ads/" rel="noopener noreferrer" target="_blank">Political Ad Collector</a>, created by independent news organization ProPublica, gathers targeted political advertising on Facebook into a database of micro-targeted political ads.</div>
+
+		<div class="paragraph">The <a href="https://engineering.nyu.edu/online-political-ads-transparency-project/" rel="noopener noreferrer" target="_blank">Online Political Ads Transparency Project</a> is a collaboration by NYU Tandon doctoral student Laura Edelson, NYU Shanghai visiting undergraduate student Shikhar Sakhuja, and Damon McCoy, Assistant Professor of Computer Science and Engineering.<div>
+
+		<div class="subtitle">Related Firefox extensions</div>
+
+		<div class="paragraph">To limit the data Facebook can collect about you while you browse the web, check out <a href="https://blog.mozilla.org/firefox/facebook-container-extension/" rel="noopener noreferrer" target="_blank">Facebook Container</a>.</div>
+
+		<div class="paragraph">To contribute to the ProPublica Political Ad Collection project, install the <a href="https://addons.mozilla.org/en-US/firefox/addon/facebook-ad-collector/" rel="noopener noreferrer" target="_blank">Political Ad Collector extension</a>.</div>
+
+<!---------------------------------------- THE END ---------------------------------------->
+
+	</div>
+</body>
+</html>
