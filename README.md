@@ -1,5 +1,11 @@
 # Ad Analysis for Facebook
 
+---
+
+**Ad Analysis for Facebook is temporarily disabled. Facebook has blocked this extension, so it will no longer show you how you're targeted by advertisers. [Learn more](https://blog.mozilla.org/blog/2019/01/31/mozilla-raises-concerns-over-facebooks-lack-of-transparency/)**
+
+---
+
 Get the extension from [Add-ons for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/ad-analysis-for-facebook/).
 
 ## How Facebook Helps Advertisers Target You
@@ -44,3 +50,8 @@ To start the continuous build system, run:
 npm start
 ```
 The above script will automatically monitor the `src` folder and regenerate relevant files in the `dist` folder including linting `*.js` files, minifying `*.js` and `*.html` files, and compiling `*.less` into `*.css`.
+
+## Source code
+
+[GitHub for the disabled extension](https://github.com/mozilla/ad-analysis-for-facebook-disabled)
+
